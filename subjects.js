@@ -29,8 +29,8 @@ class Subjects{
             if (value.title===obj.title && value.lessons===obj.lessons) {
                     this.#temp = false
             }
-        }
-        )
+        })
+        
         if(this.#temp===false){
             return "subject is already added you can not add it twise"
         }
