@@ -1,5 +1,6 @@
 export class Random{
     static randBetween(min,max){
+    //ამ ფუნქციას გადასცემ ორ რიცხვს და ამ ორ რიცხვს შორის გიგენერირებს მთელ რიცხვებს
      if(min>max){
          [min,max] = [max,min]
      }
