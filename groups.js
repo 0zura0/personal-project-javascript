@@ -1,7 +1,7 @@
 import { Validations } from "./validations.js";
 import { Random } from "./random.js";
 
-class Groups{
+export class Groups{
     #groupMap
     constructor(){
         this.#groupMap=new Map()
@@ -31,7 +31,7 @@ class Groups{
         return id
     }
 
-    addPupils(groupId,pupil){
+    addPupil(groupId,pupil){
         //შეამოწმებს არსებობს თუ არა, თუ არსებობს დავალიდირებს რომ number-ია თუ არადა err
         if(groupId){
             Validations.isNumeric(groupId)
@@ -51,7 +51,7 @@ class Groups{
         }else{
             return "There is not room with such id"
         }
-        console.log(this.#groupMap);
+        // console.log(this.#groupMap);
         //ყველაფრის კარგად დასრულების შემთხვევაში აბრუნებს true-ს
         return true
     }
@@ -158,7 +158,12 @@ class Groups{
         }
         return temparr
     }
+// ----------------------------------------------------
+//ამას წავშლი მერე )
+readGroupsMap(){
 
+    console.log(this.#groupMap);
+}
 }
 
 
@@ -183,7 +188,7 @@ let data={
     "description": "string"
   }
 
-  const add =groups.addPupils(groupId,data)
+//   const add =groups.addPupils(groupId,data)
 //   console.log(data.id);
 //   groups.removePupil(groupId, data.id)
 

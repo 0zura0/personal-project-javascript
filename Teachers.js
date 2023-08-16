@@ -1,7 +1,7 @@
 import { Validations } from "./validations.js";
 import { Random } from "./random.js";
 
-class Teachers {
+export class Teachers {
   #TeachersMap
   #counter = 0
   constructor() {
@@ -167,7 +167,11 @@ class Teachers {
     }
   }
 
-
+// ----------------------------------------------------
+//ამას წავშლი მერე )
+readTeacherssMap(){
+  console.log(this.#TeachersMap);
+}
 }
 
 const teachers = new Teachers();
@@ -248,8 +252,8 @@ let teacher2 = {
 
 
 
-let id = teachers.add(teacher1)
-let id2 = teachers.add(teacher2)
+// let id = teachers.add(teacher1)
+// let id2 = teachers.add(teacher2)
 // let idd2= teachers.update(id,teacher2)
 // console.log(idd2);
 // console.log(teachers.read(id));

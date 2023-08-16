@@ -1,7 +1,7 @@
 import { Validations } from "./validations.js";
 import { Random } from "./random.js";
 
-class Subjects{
+export class Subjects{
     #subjectArr
     #temp
     #temp2
@@ -49,7 +49,7 @@ class Subjects{
         }
         //ვსეტავ ისე რომ შიგნით ობიექტს ჰქონდეს აიდი და იგივე აიდით იყოს მაპშიც
         this.#subjectArr.set(id,{id:id, ...obj})
-        console.log(this.#subjectArr);
+        // console.log(this.#subjectArr);
         return id
     }
 
@@ -101,7 +101,11 @@ class Subjects{
         //ყველა მეპის ობიექრის value-ს მასივს დააბრუნებს
         return Array.from(this.#subjectArr.values())
     }
-
+// ----------------------------------------------------
+//ამას წავშლი მერე )
+readSubjectsMap(){
+    console.log(this.#subjectArr);
+}
 }
 
 const history = {
@@ -121,12 +125,12 @@ const history = {
   };
 
 
-  const subjects = new Subjects();
-  const subjectId = subjects.add(history); // should add subject. Returns subject id
-  const subjectId2 = subjects.add(history2);
+//   const subjects = new Subjects();
+//   const subjectId = subjects.add(history); // should add subject. Returns subject id
+//   const subjectId2 = subjects.add(history2);
 //   console.log(subjects.remove(subjectId2)); //es sheizleba shevcvalo da obieqts abrunebdes
 
-  console.log(subjects.verify(history3));
+//   console.log(subjects.verify(history3));
 // console.log(subjects.readAll());
 
 

@@ -1,7 +1,7 @@
 import { Validations } from "./validations.js"
 import { Random } from "./random.js"
 
-class Pupils {
+export class Pupils {
   #counter = 0;
   #pupilsMap;
 
@@ -101,7 +101,7 @@ class Pupils {
     }
     //სეტავს ახალ ობიექტს შიგნით id-თ
     this.#pupilsMap.set(id, { id: id, ...data })
-    console.log(this.#pupilsMap);
+    // console.log(this.#pupilsMap);
     return this.#pupilsMap.get(id)
   }
 
@@ -158,6 +158,13 @@ class Pupils {
       return true
     }
   }
+  // ----------------------------------------------------
+//ამას წავშლი მერე )
+readPupilsMap(){
+  // console.log(this.#pupilsMap);
+  return this.#pupilsMap
+
+}
 }
 
 let data = {
@@ -199,13 +206,13 @@ let data2 = {
   "sex": "male", // male OR female 
   "description": "string"
 }
-let pupils = new Pupils()
-const pupil = pupils.add(data);
+// let pupils = new Pupils()
+// const pupil = pupils.add(data);
 // const pupil2 = pupils.add(data2);
 // console.log(pupil2);
 // console.log(pupil.id);
 // console.log(pupils.read(pupil.id));
-console.log(pupils.update(pupil.id, data2));
-console.log(pupils.remove(pupil.id));
+// console.log(pupils.update(pupil.id, data2));
+// console.log(pupils.remove(pupil.id));
 
 
