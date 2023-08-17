@@ -158,7 +158,8 @@ export class Teachers {
     } else {
       throw new Error("id should be provoded")
     }
-    //თუ მეპში არის მასწავლებელი მსგავსი აიდით წაშლის და დააბრუნებს წარმატებისთვის true-ს თუ არ არსებობს მსგავსი აიდი დააბრუნებს there is not teacher with such id 
+    //თუ მეპში არის მასწავლებელი მსგავსი აიდით წაშლის და დააბრუნებს წარმატებისთვის true-ს თუ 
+    //არ არსებობს მსგავსი აიდი დააბრუნებს there is not teacher with such id 
     if (this.#TeachersMap.has(id)) {
       this.#TeachersMap.delete(id)
       return true
@@ -166,100 +167,14 @@ export class Teachers {
       return "there is not teacher with such id"
     }
   }
-
-// ----------------------------------------------------
-//ამას წავშლი მერე )
-readTeacherssMap(){
-  console.log(this.#TeachersMap);
-}
-}
-
-const teachers = new Teachers();
-let teacher1 = {
-  "name": {
-    "first": "akaki",
-    "last": "giorgadze"
-  },
-  "dateOfBirth": "2022-08-10", // format date
-  "emails": [
-    {
-      "email": "user@example.com",
-      "primary": true,
-    },
-    {
-      "email": "user@example.com",
-      "primary": false,
-    }
-  ],
-  "phones": [
-    {
-      "phone": "123456789",
-      "primary": true
-    },
-    {
-      "phone": "123456789",
-      "primary": false
-    }
-  ],
-  "sex": "male", // male or female
-  "subjects": [
-    {
-      "subject": "algo" // just name property of subject.
-    }
-  ],
-  "description": "string",
-}
-
-
-
-
-let teacher2 = {
-  "name": {
-    "first": "zura",
-    "last": "magalashvili"
-  },
-  "dateOfBirth": "2022-08-10", // format date
-  "emails": [
-    {
-      "email": "user@example2.com",
-      "primary": false,
-    },
-    {
-      "email": "user@example.com",
-      "primary": true,
-    }
-  ],
-  "phones": [
-    {
-      "phone": "123456789",
-      "primary": true
-    },
-    {
-      "phone": "123456789",
-      "primary": false
-    }
-  ],
-  "sex": "male", // male or female
-  "subjects": [
-    {
-      "subject": "algo" // just name property of subject.
-    }
-  ],
-  "description": "string",
 }
 
 
 
 
 
-// let id = teachers.add(teacher1)
-// let id2 = teachers.add(teacher2)
-// let idd2= teachers.update(id,teacher2)
-// console.log(idd2);
-// console.log(teachers.read(id));
-// teachers.remove(id)
 
 
-// Validations.isValidDateFormat("2022-02-28")
-// console.log("2027-12-10".split("-")[0]>new Date().getFullYear());
-// console.log("2027-12-10".split("-")[0] );
+
+
+

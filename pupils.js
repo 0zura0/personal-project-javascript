@@ -101,7 +101,6 @@ export class Pupils {
     }
     //სეტავს ახალ ობიექტს შიგნით id-თ
     this.#pupilsMap.set(id, { id: id, ...data })
-    // console.log(this.#pupilsMap);
     return this.#pupilsMap.get(id)
   }
 
@@ -137,7 +136,6 @@ export class Pupils {
       return false
     } else {
       this.#pupilsMap.set(id, { id: id, ...newObj })
-      // console.log(this.#pupilsMap);
     }
     return true
   }
@@ -154,65 +152,13 @@ export class Pupils {
       return false
     } else {
       this.#pupilsMap.delete(id)
-      // console.log(this.#pupilsMap);
       return true
     }
   }
-  // ----------------------------------------------------
-//ამას წავშლი მერე )
-readPupilsMap(){
-  // console.log(this.#pupilsMap);
-  return this.#pupilsMap
-
-}
 }
 
-let data = {
-  "name": {
-    "first": "nika",
-    "last": "kakauridze"
-  },
-  "dateOfBirth": "2022-08-10", // format date
-  "phones": [
-    {
-      "phone": "551566881",
-      "primary": false
-    },
-    {
-      "phone": "551566889",
-      "primary": true
-    }
-  ],
-  "sex": "male", // male OR female 
-  "description": "string"
-}
 
-let data2 = {
-  "name": {
-    "first": "zuka",
-    "last": "kakauridze"
-  },
-  "dateOfBirth": "2022-08-10", // format date
-  "phones": [
-    {
-      "phone": "551566881",
-      "primary": true
-    },
-    {
-      "phone": "551566889",
-      "primary": false
-    }
-  ],
-  "sex": "male", // male OR female 
-  "description": "string"
-}
-// let pupils = new Pupils()
-// const pupil = pupils.add(data);
-// const pupil2 = pupils.add(data2);
-// console.log(pupil2);
-// console.log(pupil.id);
-// console.log(pupils.read(pupil.id));
-// console.log(pupils.update(pupil.id, data2));
-// console.log(pupils.remove(pupil.id));
+
+
 
 

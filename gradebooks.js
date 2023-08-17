@@ -30,15 +30,16 @@ class Gradebooks {
         if (this.#GradeBooksMap.has(roomid)) {
             return "That group already have Gradebook"
         }
-        //---------------------------------------აქ უნდა დავუმატო არსებობს თუ არა მსგავსი room საერთოდ roommapში
+        //საერთოდ არსებობს თუ არა მსგავსი room შესაბამისი roomid-თ
+        if(this.#GroupsMap.read(roomid)==="there is not room with such id"){
+            return "there is not room with such id so you can not create Gradebook"
+        }
         let recordsmap = new Map()
         this.#GradeBooksMap.set(roomid, recordsmap)
-        // console.log(this.#GradeBooksMap);
         return roomid
     }
     clear() {
         this.#GradeBooksMap.clear()
-        // console.log(this.#GradeBooksMap);
         return true
     }
 
@@ -86,7 +87,6 @@ class Gradebooks {
         for (let i = 0; i < pupilArr.length; i++) {
             if (pupilArr[i].id === pupilId) {
                 firstLast = pupilArr[i].name.first + " " + pupilArr[i].name.last;
-                console.log(firstLast);
             }
         }
         if (!firstLast) {
@@ -95,7 +95,6 @@ class Gradebooks {
         //მოვძებნოთ მასწავლებელი
         if (this.#TeachersMap.read(teacherId) !== false) {
             teachername = this.#TeachersMap.read(teacherId).name.first + " " + this.#TeachersMap.read(teacherId).name.last
-            console.log(teachername);
         } else {
             return "There is not such Teacher in school"
         }
@@ -104,7 +103,6 @@ class Gradebooks {
         for (let i = 0; i < subjectARR.length; i++) {
             if (subjectARR[i].id === subjectId) {
                 subj = subjectARR[i].title;
-                console.log(subj);
             }
         }
         //ვნახოთ ასწავლის თუ არა ამ საგანს ეს მასწავლებელი
@@ -118,7 +116,6 @@ class Gradebooks {
             throw new Error("Teacher is not teaching that subject")
         }
         this.#counter = 0;
-        //------------------------------------------aq unda davuwero rom ert gakvetilze ori nishnis dawera ar sheizleba mere
         //ვნახოთ სწორი ნიშანია თუ არა
         if (mark < 0 || mark > 10) {
             throw new Error("mark should be from 0 to 10")
@@ -140,7 +137,6 @@ class Gradebooks {
                 ]
             }
             this.#GradeBooksMap.get(gradebookId).set(pupilId, initialobject)
-            // console.log(this.#GradeBooksMap.get(gradebookId).get(pupilId));
         } else {
             let addingObj = {
                 teacher: teachername,
@@ -173,7 +169,20 @@ class Gradebooks {
                 return "There is not such Person in That class"
             }
         }else{
-            return "There is not such Gradebook in school"
+            return "There is not such Gradebook with that id in school"
+        }
+    }
+
+    readAll(gradebookId){
+        if(gradebookId){
+            Validations.isNumeric(gradebookId)
+        }else{
+            throw new Error("Gradebookid should be provided")
+        }
+        if(this.#GradeBooksMap.has(gradebookId)){
+            return Array.from(this.#GradeBooksMap.get(gradebookId).values())
+        }else{
+            return "There is not Gradebook with such id"
         }
     }
 
@@ -324,6 +333,7 @@ const room = 236;
 const groups = new Groups();
 
 const groupId = groups.add(room);
+// console.log(groupId);
 groups.addPupil(groupId, pupil01);
 groups.addPupil(groupId, pupil02);
 
@@ -349,7 +359,19 @@ const record = {
     lesson: 1,
     mark: 9
 };
-gradebooks.addRecord(gradebookId, record);
+const record2 = {
+    pupilId: pupil02.id,
+    teacherId: teacher1id,
+    subjectId: historyid,
+    lesson: 1,
+    mark: 9
+};
 
+console.log(gradebooks.addRecord(gradebookId, record));
+gradebooks.addRecord(gradebookId, record2);
 const Nika = gradebooks.read(gradebookId, pupil01.id);
-console.log(Nika);
+// console.log(Nika);
+const students = gradebooks.readAll(gradebookId);
+students.forEach((value)=>{
+    console.log(value);
+});
