@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "target": "es2017",
+      "lib": ["dom","es2017"],
+      "skipLibCheck": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true
+    },
+    "files": ["subjectsTs.ts",
+              "ValidationsTs.ts",
+              "RandomTs.ts",
+              "abstracts.ts",
+              "interfaces.ts",
+              "pupils.ts",
+              "TeachersTs.ts",
+              "groupsTs.ts"]
+  }
+  
