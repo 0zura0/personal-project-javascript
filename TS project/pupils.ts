@@ -49,8 +49,8 @@ constructor() {
 
   private checkIfExists(obj:pupilObj):boolean {
     //ეს ამოწმებს სახელს გვარს ტელეფონს რომ იგივე ხალხი არ დაემატოს და არ დააბინძუროს კონტეინერი ერთნაირი ობიექტებით
-    let counter = 0
-    let arrOfCont:pupilObj[] = Array.from(this.pupilsMap.values());
+    let counter:number = 0
+    let arrOfCont:(pupilObj&{id:number})[] = Array.from(this.pupilsMap.values());
     for (let i = 0; i < arrOfCont.length; i++) {
       if (arrOfCont[i].name.first === obj.name.first &&
         arrOfCont[i].name.last === obj.name.last)
@@ -121,31 +121,4 @@ constructor() {
       }
   }
 }
-
-
-// let data:pupilObj ={
-//   "name": {
-//     "first": "zura",
-//     "last": "magalashvili"
-//   },
-//   "dateOfBirth": "2002-09-05", // format date
-//   "phones": [
-//     {
-//       "phone": "551566888",
-//       "primary": true
-//     }
-//   ],
-//   "sex": "male", // male OR female
-//   "description": "string"
-// }
-
-// const pupils=new Pupils()
-// let pupilsobj:pupilObj&{id:number} =pupils.add(data);
-// pupils.update(pupilsobj.id,data)
-// console.log(pupils.read(pupilsobj.id));
-
-
-
-
-
 

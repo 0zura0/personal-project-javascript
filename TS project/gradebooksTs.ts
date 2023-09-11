@@ -127,7 +127,7 @@ class Gradebooks{
         return true
     }
 
-  public read(gradebookId:number, pupilId:number):InitialObj | undefined{ // ამაზე ვკითხოთ
+  public read(gradebookId:number, pupilId:number):InitialObj | undefined{
         //მოძებნა და დარეთარნება
         if(this.GradeBooksMap.has(gradebookId)){
             if(this.GradeBooksMap.get(gradebookId)?.has(pupilId)){

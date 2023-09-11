@@ -23,7 +23,6 @@ export class Groups{
         }
         let map:Map<number,pupilObj&{id:number}> = new Map()
         this.groupMap.set(id, { id: id, room: room, pupils: map })
-        // console.log(mapsArr);
         return id
     }
     public addPupil(groupId:number, pupil:pupilObj&{id:number}):boolean{
@@ -33,7 +32,6 @@ export class Groups{
         } else {
             throw new Error("There is not room with such id")
         }
-        // console.log(this.groupMap.get(groupId).pupils);
         //ყველაფრის კარგად დასრულების შემთხვევაში აბრუნებს true-ს
         return true
     }
@@ -116,51 +114,3 @@ export class Groups{
     }
 }
 
-
-// const room = 236;
-// const room2=500;
-// const groups = new Groups();
-
-// let pupil:pupilObj&{id:number} ={
-//     "id":1,
-//     "name": {
-//       "first": "zura",
-//       "last": "magalashvili"
-//     },
-//     "dateOfBirth": "2002-09-05", // format date
-//     "phones": [
-//       {
-//         "phone": "551566888",
-//         "primary": true
-//       }
-//     ],
-//     "sex": "male", // male OR female
-//     "description": "string"
-//   }
-        
-// // Create a new group. add methods takes integer as a parameter. returns id of group
-// const groupId = groups.add(room);
-// const groupId2 = groups.add(room2);
-// groups.log()
-
-// // Add this pupil to this group
-// groups.addPupil(groupId, pupil);
-
-// // Remove this pupil from this group
-// groups.removePupil(groupId, pupil.id);
-
-// // Update room for this group
-// groups.update(groupId, {
-//   room: 237
-// });
-
-// // Read information about group
-// groups.read(groupId);
-// // {
-// //   id: 'JEF5H43H'
-// //   room: 237,
-// //   pupils:[] // array of pupils.     
-// // }
-
-// // It will return array of groups
-// groups.readAll() 

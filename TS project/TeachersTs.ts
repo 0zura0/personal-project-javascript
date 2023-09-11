@@ -42,12 +42,9 @@ export class Teachers extends addANDremove<pupilObj&teacherAdder> {
           Validations.isValidEmailFormat(emails[i].email)
         if (emails[i].primary === true) {
           this.counter++;
-          // console.log(this.counter);
-          
         }
       }
       if (this.counter > 1 || this.counter === 0) {
-        // console.log(this.counter);
         
         this.counter = 0;
         throw new Error("There must one primary email")
@@ -96,10 +93,8 @@ export class Teachers extends addANDremove<pupilObj&teacherAdder> {
     }
     //დავამატებ მეპში ისე რომ აიდიც ქონდეს data-ს
     this.TeachersMap.set(id, { id: id, ...data })
-    // console.log(this.TeachersMap);
     return id
     }
-
 
 
     public read(teacherId:number):pupilObj&teacherAdder {
@@ -110,7 +105,7 @@ export class Teachers extends addANDremove<pupilObj&teacherAdder> {
         return this.TeachersMap.get(teacherId)
       }
 
-    public update(id:number, newobj:pupilObj&teacherAdder) :string | boolean {
+    public update(id:number, newobj:pupilObj&teacherAdder) : string | boolean {
         //დაავალიდირებს გადმოცემულ ობიექტს
         this.innerValidation(newobj)  
         //ვნახავ თუ არის მეპში მსგავსი ადამიანი სხვა რადგან დუბლიკატები არ მქონდეს
@@ -120,14 +115,12 @@ export class Teachers extends addANDremove<pupilObj&teacherAdder> {
             return "there is teacher with such firstname and lastname"
           }
         }
-        // console.log(this.TeachersMap);
         //თუ მეპში არის მსგავსი აიდი დააფდეითებს და თუ არარის დააბრუნებს there is not teacher with such id
         if (this.TeachersMap.has(id)) {
           this.TeachersMap.set(id, { id: id, ...newobj })
         } else {
           return "there is not teacher with such id"
         }
-        // console.log(this.TeachersMap);
         return true
       }
 
@@ -147,75 +140,3 @@ export class Teachers extends addANDremove<pupilObj&teacherAdder> {
 } 
 
 
-
-// let data:pupilObj&teacherAdder = {
-//         "name": {
-//         "first": "zura",
-//         "last": "magalashvili"
-//       },
-//       "dateOfBirth": "2002-09-05", // format date
-//       "emails": [
-//         {
-//           "email": "zuramagalashvili@gmail.com",
-//           "primary": true
-//         }
-//       ],
-//       "phones": [
-//         {
-//           "phone": "551566888",
-//           "primary": true
-//         }
-//       ],
-//       "sex": "male", // male or female
-//       "subjects": [
-//         {
-//           "subject": "history" // just name property of subject.
-//         }
-//       ],
-//       "description": "string",
-// }
-
-
-// var data2:pupilObj&teacherAdder = {
-//     "name": {
-//         "first": "nika",
-//         "last": "mgeladze"
-//     },
-//     "dateOfBirth": "2002-09-05",
-//     "emails": [
-//         {
-//             "email": "zuramagalashvili@gmail.com",
-//             "primary": true
-//         }
-//     ],
-//     "phones": [
-//         {
-//             "phone": "551566888",
-//             "primary": true
-//         },
-//         {
-//           "phone": "551566881",
-//           "primary": false
-//         },
-//         {
-//           "phone": "551566881",
-//           "primary": true
-//         }
-//     ],
-//     "sex": "male",
-//     "subjects": [
-//         {
-//             "subject": "history" // just name property of subject.
-//         }
-//     ],
-//     "description": "string",
-// };
-
-// let teach = new Teachers()
-
-// let id=teach.add(data2);
-// // let id2 = teach.add(data2)
-// // console.log(teach.update(id,data2));
-// console.log(teach.read(id));
-// // console.log(teach.remove(id));
-// // console.log(teach.read(id));
