@@ -1,10 +1,10 @@
 import { Validations } from "./validations.js";
 
 //ეს უბრალოდ მერე თუ ამავე ფაილში გატესტავ
-import { Subjects } from "./subjects.js";
-import { Teachers } from "./Teachers.js";
-import { Pupils } from "./pupils.js";
-import { Groups } from "./groups.js";
+// import { Subjects } from "./subjects.js";
+// import { Teachers } from "./Teachers.js";
+// import { Pupils } from "./pupils.js";
+// import { Groups } from "./groups.js";
 
 class Gradebooks {
     #TeachersMap

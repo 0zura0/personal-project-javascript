@@ -27,9 +27,11 @@ export class Subjects {
         Validations.isMixedString(title)
         Validations.isNumeric(lessons)
     }
+    
     add(obj) {
         //დასავალიდირებელი ფუნქცია
         this.#validObj(obj)
+
         if (obj.description) {
             Validations.isMixedString(obj.description)
         }
