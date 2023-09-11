@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-      "module": "commonjs",
+      "module": "CommonJS",
       "moduleResolution": "node",
       "target": "es2017",
       "lib": ["dom","es2017"],
@@ -9,12 +9,13 @@
       "emitDecoratorMetadata": true
     },
     "files": ["subjectsTs.ts",
-              "ValidationsTs.ts",
-              "RandomTs.ts",
-              "abstracts.ts",
-              "interfaces.ts",
-              "pupils.ts",
-              "TeachersTs.ts",
-              "groupsTs.ts"]
+            "ValidationsTs.ts",
+            "RandomTs.ts",
+            "abstracts.ts",
+            "interfaces.ts",
+            "pupils.ts",
+            "TeachersTs.ts",
+            "groupsTs.ts",
+            "gradebooksTs.ts"]
   }
   

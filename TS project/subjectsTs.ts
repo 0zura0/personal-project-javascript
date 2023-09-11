@@ -46,7 +46,7 @@ export class Subjects extends addANDremove<SubjectObj>{
 
         //ვსეტავ ისე რომ შიგნით ობიექტს ჰქონდეს აიდი და იგივე აიდით იყოს მაპშიც
         this.subjectArr.set(id, { id: id, ...subjectobj })
-        console.log(this.subjectArr);
+        // console.log(this.subjectArr);
         return id
     }
 
@@ -84,34 +84,40 @@ export class Subjects extends addANDremove<SubjectObj>{
         }
     }
 
-    readAll():Object[]{
+    readAll():(SubjectObj&{id:number})[]{
         //ყველა მეპის ობიექრის value-ს მასივს დააბრუნებს
         return Array.from(this.subjectArr.values())
+    }
+
+    public log(){
+        console.log(this.subjectArr);
+        
     }
 
 
 
 }
-const history = {
-    title: 'History',
-    lessons:5,
-  };
 
-const english = {
-    title: 'english',
-    lessons:15,
-    description:"so good"
-  };
+// const history = {
+//     title: 'History',
+//     lessons:5,
+//   };
+
+// const english = {
+//     title: 'english',
+//     lessons:15,
+//     description:"so good"
+//   };
   
 
-let sub = new Subjects()
-let subid=sub.add(history)
-let subid2 = sub.add(english)
-// console.log(sub.remove(subid));
+// let sub = new Subjects()
+// let subid=sub.add(history)
+// let subid2 = sub.add(english)
+// // console.log(sub.remove(subid));
 
-console.log(sub.verify(history));
+// console.log(sub.verify(history));
 
-console.log(sub.readAll());
+// console.log(sub.readAll());
 
 
 

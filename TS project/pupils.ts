@@ -87,10 +87,10 @@ constructor() {
     return this.pupilsMap.get(id)
   }
 
-  public read(id:number): boolean | pupilObj{
-    //შეამოწმებს თუ აქვს ასეთი აიდი მაპში თუ არ აქვს false დააბრუნებს თუ არადა ობიექტს
+  public read(id:number):pupilObj&{id:number}{
+    //შეამოწმებს თუ აქვს ასეთი აიდი მაპში თუ არ აქვს err თუ არადა ობიექტს
     if (!this.pupilsMap.has(id)) {
-      return false
+      throw new Error("we do not have such person")
     }
     return this.pupilsMap.get(id)
   }
@@ -123,26 +123,26 @@ constructor() {
 }
 
 
-let data:pupilObj ={
-  "name": {
-    "first": "zura",
-    "last": "magalashvili"
-  },
-  "dateOfBirth": "2002-09-05", // format date
-  "phones": [
-    {
-      "phone": "551566888",
-      "primary": true
-    }
-  ],
-  "sex": "male", // male OR female
-  "description": "string"
-}
+// let data:pupilObj ={
+//   "name": {
+//     "first": "zura",
+//     "last": "magalashvili"
+//   },
+//   "dateOfBirth": "2002-09-05", // format date
+//   "phones": [
+//     {
+//       "phone": "551566888",
+//       "primary": true
+//     }
+//   ],
+//   "sex": "male", // male OR female
+//   "description": "string"
+// }
 
-const pupils=new Pupils()
-let pupilsobj:pupilObj&{id:number} =pupils.add(data);
-pupils.update(pupilsobj.id,data)
-console.log(pupils.read(pupilsobj.id));
+// const pupils=new Pupils()
+// let pupilsobj:pupilObj&{id:number} =pupils.add(data);
+// pupils.update(pupilsobj.id,data)
+// console.log(pupils.read(pupilsobj.id));
 
 
 

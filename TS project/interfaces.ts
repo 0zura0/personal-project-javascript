@@ -1,3 +1,5 @@
+
+
 export interface SubjectObj{
     title:string,
     lessons:number,
@@ -46,3 +48,22 @@ id:number,
 room:number,
 pupils:Map<Number,pupilObj&{id:number}>
 }
+
+export interface Irecords{
+    pupilId: number,
+    teacherId: number,
+    subjectId: number,
+    lesson:number,
+    mark:number
+}
+
+export interface GradebookRecs{
+    teacher: string;
+    subject: string | boolean;
+    lesson: number;
+    mark: number;
+}
+export interface InitialObj{
+        name: string | boolean;
+        records:GradebookRecs[];
+    }
